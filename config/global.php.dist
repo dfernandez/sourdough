@@ -7,6 +7,11 @@ return [
         'monolog.logfile' => __DIR__.'/../var/logs/app.log',
     ],
 
+    # twig
+    'twig' => [
+        'twig.path' => __DIR__.'/../src/<Application>/Views',
+    ],
+
     # profiler
     'profiler' => [
         'profiler.cache_dir' => __DIR__.'/../var/cache/profiler',

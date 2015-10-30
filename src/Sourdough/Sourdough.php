@@ -1,6 +1,6 @@
 <?php
 
-namespace Dough;
+namespace Sourdough;
 
 use Silex\Provider\HttpFragmentServiceProvider;
 use Silex\Provider\MonologServiceProvider;
