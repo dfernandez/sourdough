@@ -1,4 +1,13 @@
 {
+    "name": "david1983xtc/sourdough",
+    "description": "Silex base application",
+    "authors": [
+        {
+            "name": "David Fernandez",
+            "email": "david1983xtc@gmail.com"
+        }
+    ],
+
     "require": {
         "silex/silex": "~1.3",
         "monolog/monolog": "^1.17",
