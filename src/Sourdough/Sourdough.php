@@ -11,6 +11,7 @@ use Silex\Provider\WebProfilerServiceProvider;
 use Silex\Application\TwigTrait;
 use Silex\Application\UrlGeneratorTrait;
 use Silex\Application;
+use Twig_Extensions_Extension_Intl;
 
 class Sourdough extends Application
 {
@@ -19,9 +20,9 @@ class Sourdough extends Application
 
     protected $config = [];
 
-    public function __construct()
+    public function __construct($config)
     {
-        $this->config = require __DIR__.'/../../config/local.php';
+        $this->config = $config;
 
         parent::__construct(['debug' => $this->config['debug']]);
 
@@ -36,5 +37,15 @@ class Sourdough extends Application
             $this->register(new UrlGeneratorServiceProvider());
             $this->register(new WebProfilerServiceProvider(), $this->config['profiler']);
         }
+
+        $this->registerServices();
+    }
+
+    private function registerServices()
+    {
+        $app = $this;
+
+        // Register Twig Intl extension
+        $app['twig']->addExtension(new Twig_Extensions_Extension_Intl());
     }
 }
